@@ -56,7 +56,7 @@ window.INVITATION = {
   principals: [
     {
       role: "Novia",
-      givenNames: "Luvia",
+      givenNames: "Blanca Luvia",
       familyNames: "Chandoqui Guillén",
       shortName: "Luvia"
     },
