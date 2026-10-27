@@ -39,7 +39,7 @@ window.INVITATION = {
     }
   },
   music: {
-    src: "assets/prueba-9.mp3",
+    src: "assets/Ed Sheeran - Thinking out Loud.flac",
     title: "Prueba 9",
     artist: "Luis LG",
     credit: ""
