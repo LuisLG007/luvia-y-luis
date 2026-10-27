@@ -272,7 +272,7 @@
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "blanca-y-luis-12-diciembre-2026.ics";
+    link.download = "luvia-y-luis-12-diciembre-2026.ics";
     link.click();
     URL.revokeObjectURL(url);
   }

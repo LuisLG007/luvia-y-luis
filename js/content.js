@@ -39,7 +39,7 @@ window.INVITATION = {
     }
   },
   music: {
-    src: "assets/Ed Sheeran - Thinking out Loud.flac",
+    src: "assets/prueba-9.mp3",
     title: "Prueba 9",
     artist: "Luis LG",
     credit: ""
@@ -56,9 +56,9 @@ window.INVITATION = {
   principals: [
     {
       role: "Novia",
-      givenNames: "Blanca Luvia",
+      givenNames: "Luvia",
       familyNames: "Chandoqui Guillén",
-      shortName: "Blanca"
+      shortName: "Luvia"
     },
     {
       role: "Novio",
