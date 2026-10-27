@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Blanca y Luis · Boda civil</title>
+  <meta name="description" content="Boda civil de Blanca Luvia Chandoqui Guillén y Luis Alberto López Gutiérrez. Sábado 12 de diciembre de 2026, a las 4:00 de la tarde. Calle Eucalipto Sur 509, Colonia Patria Nueva.">
+  <meta name="theme-color" content="#1c2822">
+  <meta property="og:title" content="Blanca y Luis · Boda civil">
+  <meta property="og:description" content="Sábado 12 de diciembre de 2026, 4:00 de la tarde. Calle Eucalipto Sur 509, Colonia Patria Nueva.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%231c2822' width='64' height='64'/%3E%3Ctext x='32' y='40' text-anchor='middle' fill='%23e7d7b8' font-family='Georgia' font-size='22'%3EBL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..700;1,6..96,400..500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,460&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/photos/arch.jpg">
+  <link rel="stylesheet" href="css/invitation.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="progress" aria-hidden="true"></div>
+  <noscript><p class="noscript">Active JavaScript para abrir la invitación, escuchar la música y confirmar asistencia.</p></noscript>
+
+  <div class="gate" id="gate" data-section="gate">
+    <div class="gate-bg" aria-hidden="true">
+      <img src="assets/photos/arch.jpg" alt="">
+    </div>
+    <article class="gate-card">
+      <div class="gate-photo">
+        <img src="assets/photos/rings.jpg" alt="Argollas de oro sobre lino">
+      </div>
+      <p class="kicker" data-bind="copy.gateKicker"></p>
+      <p class="gate-names">
+        <span data-bind="principals.0.shortName"></span>
+        <span class="amp" aria-hidden="true">&amp;</span>
+        <span data-bind="principals.1.shortName"></span>
+      </p>
+      <p class="gate-date" id="gate-date"></p>
+      <div class="gate-actions">
+        <button class="btn btn-primary" id="open-music" type="button" data-bind="ui.open"></button>
+        <button class="btn btn-ghost" id="open-silent" type="button" data-bind="ui.silent"></button>
+      </div>
+    </article>
+  </div>
+
+  <header class="nav">
+    <a class="brand" href="#portada">
+      <svg class="monogram" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="0.75"></circle>
+        <circle cx="32" cy="32" r="25.5" fill="none" stroke="currentColor" stroke-width="0.4"></circle>
+        <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="currentColor">B·L</text>
+      </svg>
+      <span class="brand-name" id="brand-name">Blanca &amp; Luis</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#invitacion">Invitación</a></li>
+      <li><a href="#fecha">Fecha</a></li>
+      <li><a href="#lugar">Lugar</a></li>
+      <li data-nav="gallery"><a href="#galeria">Tarde</a></li>
+      <li><a href="#confirmar">Confirmar</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn music" id="music-toggle" type="button" aria-pressed="false" aria-label="Reproducir música">
+        <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M9 18V6l10-2v12"></path>
+          <circle cx="7" cy="18" r="2.2"></circle>
+          <circle cx="17" cy="16" r="2.2"></circle>
+        </svg>
+        <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <rect x="6" y="4.5" width="4" height="15" rx="0.6"></rect>
+          <rect x="14" y="4.5" width="4" height="15" rx="0.6"></rect>
+        </svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span data-bind="ui.menu"></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu" id="menu" hidden>
+    <button class="menu-close icon-btn" id="menu-close" type="button" data-bind="ui.close"></button>
+    <a href="#invitacion">Invitación</a>
+    <a href="#fecha">Fecha</a>
+    <a href="#lugar">Lugar</a>
+    <a href="#galeria" data-nav="gallery">Tarde</a>
+    <a href="#confirmar">Confirmar</a>
+  </nav>
+
+  <main id="contenido">
+    <section class="hero" id="portada" data-section="hero" tabindex="-1">
+      <div class="hero-media">
+        <img src="assets/photos/arch.jpg" alt="Arco floral con eucalipto y seda, atmósfera de la celebración" fetchpriority="high">
+        <p class="hero-caption">12 · 12 · 2026</p>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow" data-bind="event.kind"></p>
+        <h1 class="hero-names">
+          <span class="given" data-bind="principals.0.givenNames"></span>
+          <span class="family" data-bind="principals.0.familyNames"></span>
+          <span class="amp" aria-hidden="true">&amp;</span>
+          <span class="given" data-bind="principals.1.givenNames"></span>
+          <span class="family" data-bind="principals.1.familyNames"></span>
+        </h1>
+        <hr class="rule">
+        <p class="hero-meta" id="hero-meta"></p>
+        <p class="hero-meta" id="hero-place"></p>
+        <a class="scroll-cue" href="#invitacion"><span aria-hidden="true"></span> <em data-bind="ui.scroll"></em></a>
+      </div>
+    </section>
+
+    <section class="section" id="invitacion" data-section="letter">
+      <article class="letter-card" data-reveal>
+        <svg class="sprig" viewBox="0 0 74 28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="0.8">
+          <path d="M2 20c16-2 24-14 35-16 8 10 18 14 35 12"></path>
+          <path d="M22 16c2-6 8-8 12-8"></path>
+          <path d="M38 12c4-5 10-6 14-4"></path>
+          <path d="M30 18c6 2 10 6 12 8"></path>
+        </svg>
+        <p class="eyebrow">La invitación</p>
+        <p class="lede" data-bind="copy.invitationLead"></p>
+        <div class="hosts" id="hosts"></div>
+        <p class="bridge" data-bind="copy.invitationBridge"></p>
+        <p class="principal">
+          <span class="given" data-bind="principals.0.givenNames"></span>
+          <span class="family" data-bind="principals.0.familyNames"></span>
+        </p>
+        <p class="amp" aria-hidden="true">&amp;</p>
+        <p class="principal">
+          <span class="given" data-bind="principals.1.givenNames"></span>
+          <span class="family" data-bind="principals.1.familyNames"></span>
+        </p>
+        <p class="when" id="when-line"></p>
+        <div class="prose" id="invitation-body"></div>
+        <p class="close-line" data-bind="copy.invitationClose"></p>
+      </article>
+    </section>
+
+    <section class="section calendar" id="fecha" data-section="calendar">
+      <div class="date-lockup" data-reveal>
+        <p class="eyebrow">Resérvelo</p>
+        <p class="weekday" id="weekday"></p>
+        <p class="day" id="day-number"></p>
+        <p class="month" id="month-year"></p>
+        <p class="time" data-bind="event.timeLabel"></p>
+      </div>
+      <div class="countdown" aria-hidden="true">
+        <div class="count"><b id="count-days">0</b><span data-bind="ui.days"></span></div>
+        <div class="count"><b id="count-hours">00</b><span data-bind="ui.hours"></span></div>
+        <div class="count"><b id="count-minutes">00</b><span data-bind="ui.minutes"></span></div>
+        <div class="count"><b id="count-seconds">00</b><span data-bind="ui.seconds"></span></div>
+      </div>
+      <p class="today-note" id="today-note" hidden></p>
+      <div class="cal-actions">
+        <a class="btn btn-ink" id="google-cal" href="#" target="_blank" rel="noopener noreferrer" data-bind="ui.google"></a>
+        <button class="btn btn-line" id="ics-cal" type="button" data-bind="ui.ics"></button>
+      </div>
+    </section>
+
+    <section class="section" id="lugar" data-section="place">
+      <div class="place-grid">
+        <div data-reveal>
+          <p class="venue" data-bind="event.venueName"></p>
+          <h2 class="place-title" id="street"></h2>
+          <p class="address-number" id="number"></p>
+          <p class="address-line" id="neighborhood"></p>
+        </div>
+        <aside class="place-card" data-reveal style="--d: 120ms">
+          <p data-bind="copy.placeNote"></p>
+          <p data-bind="event.timeLabel"></p>
+          <a class="btn btn-ink" id="map-link" href="#" target="_blank" rel="noopener noreferrer" data-bind="ui.map"></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="galeria" data-section="gallery">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Atmósfera</p>
+        <h2 data-bind="copy.galleryTitle"></h2>
+        <p class="lede" data-bind="copy.galleryNote"></p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </section>
+
+    <section class="section rsvp" id="confirmar" data-section="rsvp">
+      <div class="rsvp-card" data-reveal>
+        <div class="section-head">
+          <p class="eyebrow">Confirmación</p>
+          <h2 data-bind="copy.rsvpTitle"></h2>
+          <p class="lede" data-bind="copy.rsvpNote"></p>
+        </div>
+        <p class="config-note" id="phone-note" data-bind="ui.phoneMissing"></p>
+        <form class="form" id="rsvp-form" novalidate>
+          <label class="field">
+            <span data-bind="ui.name"></span>
+            <input name="name" type="text" autocomplete="name" required maxlength="80">
+          </label>
+          <div class="choices" role="radiogroup" aria-label="Asistencia">
+            <label class="choice">
+              <input type="radio" name="status" value="yes" required>
+              <span data-bind="ui.attend"></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="status" value="no">
+              <span data-bind="ui.decline"></span>
+            </label>
+          </div>
+          <div class="field" id="guests-field">
+            <span class="stepper-label" data-bind="ui.guests"></span>
+            <div class="stepper">
+              <button type="button" id="guest-less" aria-label="Menos personas">−</button>
+              <b id="guest-count">1</b>
+              <button type="button" id="guest-more" aria-label="Más personas">+</button>
+            </div>
+          </div>
+          <label class="field">
+            <span data-bind="ui.message"></span>
+            <textarea name="note" maxlength="400"></textarea>
+          </label>
+          <p class="form-error" id="form-error" role="alert"></p>
+          <button class="btn btn-primary" type="submit">
+            <span data-bind="ui.submit"></span>
+          </button>
+          <p class="form-status" id="form-status" role="status"></p>
+          <a id="whatsapp-fallback" hidden>Abrir WhatsApp</a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <svg class="monogram" viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="0.75"></circle>
+      <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="currentColor">B·L</text>
+    </svg>
+    <p class="footer-names" id="footer-names">Blanca &amp; Luis</p>
+    <p data-bind="copy.footerLine"></p>
+    <p id="footer-when"></p>
+    <p id="footer-place"></p>
+  </footer>
+
+  <aside class="style-lab" id="style-lab" data-temporary="preview">
+    <button class="style-lab-toggle" id="style-lab-toggle" type="button" aria-expanded="false" aria-controls="style-lab-panel">Estilos</button>
+    <div class="style-lab-panel" id="style-lab-panel" hidden>
+      <p class="style-lab-kicker">Vista temporal</p>
+      <p class="style-lab-title">Paleta y fuente</p>
+      <p class="style-lab-label">Paleta</p>
+      <div class="style-lab-options" id="palette-options"></div>
+      <p class="style-lab-label">Fuente</p>
+      <div class="style-lab-options" id="font-options"></div>
+    </div>
+  </aside>
+
+  <a class="btn btn-primary dock" id="dock" href="#confirmar" data-bind="ui.submit"></a>
+
+  <dialog id="lightbox" aria-label="Imagen ampliada">
+    <button class="lightbox-close btn" id="lightbox-close" type="button" data-bind="ui.close"></button>
+    <img id="lightbox-image" alt="">
+    <span class="shot-caption" id="lightbox-caption"></span>
+  </dialog>
+
+  <audio id="music"></audio>
+  <script src="js/content.js"></script>
+  <script src="js/invitation.js"></script>
+</body>
+</html>
